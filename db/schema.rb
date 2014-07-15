@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714232310) do
+ActiveRecord::Schema.define(version: 20140715112025) do
 
   create_table "assignments", force: true do |t|
     t.integer  "game_id"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20140714232310) do
 
   add_index "assignments", ["game_id"], name: "index_assignments_on_game_id"
   add_index "assignments", ["team_id"], name: "index_assignments_on_team_id"
+
+  create_table "bets", force: true do |t|
+    t.integer  "tip"
+    t.boolean  "hit"
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "games", force: true do |t|
     t.string   "team1"
@@ -37,6 +46,15 @@ ActiveRecord::Schema.define(version: 20140714232310) do
     t.string   "code"
     t.string   "color1"
     t.string   "color2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.integer  "points"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

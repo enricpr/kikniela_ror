@@ -1,4 +1,8 @@
 Kikniela::Application.routes.draw do
+  resources :bets
+
+  resources :users
+
   resources :games
 
   resources :teams
