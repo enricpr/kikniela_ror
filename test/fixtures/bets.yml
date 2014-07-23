@@ -1,13 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tip: 1
-  hit: false
-  user_id: 1
-  game_id: 1
+  user_id: 
+  week: 1
+  hits: 1
+  tip1: 1
+  tip2: 1
+  tip3: 1
+  tip4: 1
+  tip5: 1
+  tip6: 1
+  tip7: 1
+  tip8: 1
+  tip9: 1
+  tip10: 1
+  tip11: 1
+  tip12: 1
+  tip13: 1
+  tip14: 1
+  tip15: 1
 
 two:
-  tip: 1
-  hit: false
-  user_id: 1
-  game_id: 1
+  user_id: 
+  week: 1
+  hits: 1
+  tip1: 1
+  tip2: 1
+  tip3: 1
+  tip4: 1
+  tip5: 1
+  tip6: 1
+  tip7: 1
+  tip8: 1
+  tip9: 1
+  tip10: 1
+  tip11: 1
+  tip12: 1
+  tip13: 1
+  tip14: 1
+  tip15: 1

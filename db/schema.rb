@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715112025) do
+ActiveRecord::Schema.define(version: 20140722170433) do
 
   create_table "assignments", force: true do |t|
     t.integer  "game_id"
@@ -24,13 +24,29 @@ ActiveRecord::Schema.define(version: 20140715112025) do
   add_index "assignments", ["team_id"], name: "index_assignments_on_team_id"
 
   create_table "bets", force: true do |t|
-    t.integer  "tip"
-    t.boolean  "hit"
     t.integer  "user_id"
-    t.integer  "game_id"
+    t.integer  "week"
+    t.integer  "hits"
+    t.integer  "tip1"
+    t.integer  "tip2"
+    t.integer  "tip3"
+    t.integer  "tip4"
+    t.integer  "tip5"
+    t.integer  "tip6"
+    t.integer  "tip7"
+    t.integer  "tip8"
+    t.integer  "tip9"
+    t.integer  "tip10"
+    t.integer  "tip11"
+    t.integer  "tip12"
+    t.integer  "tip13"
+    t.integer  "tip14"
+    t.integer  "tip15"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "bets", ["user_id"], name: "index_bets_on_user_id"
 
   create_table "games", force: true do |t|
     t.string   "team1"

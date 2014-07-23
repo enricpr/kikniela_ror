@@ -15,19 +15,23 @@ class BetsController < ApplicationController
   # GET /bets/new
   def new
     @bet = Bet.new
+	@games_w1 = Game.find(:all, :conditions => { :week => 1 })
+	/@tip_index = 1/
+	@bet_week = Time.now.strftime("%U").to_i
   end
 
   # GET /bets/1/edit
   def edit
+    @games_w1 = Game.find(:all, :conditions => { :week => 1 })
+	@bet = Bet.find(params[:id])
+	@bet_week = @bet.created_at.strftime("%U").to_i
   end
 
   # POST /bets
   # POST /bets.json
   def create
     @bet = Bet.new(bet_params)
-    /@bet.user_id = current_user.id
-    @bet.game_id = current_game.id/
-	
+
     respond_to do |format|
       if @bet.save
         format.html { redirect_to @bet, notice: 'Bet was successfully created.' }
@@ -71,6 +75,6 @@ class BetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bet_params
-      params.require(:bet).permit(:tip, :hit, :user_id, :game_id)
+      params.require(:bet).permit(:user_id, :week, :hits, :tip1, :tip2, :tip3, :tip4, :tip5, :tip6, :tip7, :tip8, :tip9, :tip10, :tip11, :tip12, :tip13, :tip14, :tip15)
     end
 end
