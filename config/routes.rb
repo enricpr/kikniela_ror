@@ -1,7 +1,13 @@
 Kikniela::Application.routes.draw do
+
   resources :bets
 
-  resources :users
+	root :to => "home#index"
+		
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+	
+	resources :users
 
   resources :games
 

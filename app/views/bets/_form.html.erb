@@ -10,107 +10,27 @@
       </ul>
     </div>
   <% end %>
+
   <div class="field">
     <%= f.label :user_id %><br>
-	<%= f.select :user_id, User.all.map {|f| [f.name, f.id]} %>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :game_id %><br>
+    <%= f.text_field :game_id %>
   </div>
   <div class="field">
     <%= f.label :week %><br>
-	<%= f.number_field :week, value: @bet_week, :readonly => true %>
+    <%= f.number_field :week %>
   </div>
   <div class="field">
-    <%= f.label :hits %><br>
-    <%= f.number_field :hits %>
+    <%= f.label :hit %><br>
+    <%= f.number_field :hit %>
   </div>
-  
-  <table class="table table-hover">
-	  <thead>
-		<tr>
-		  <th>Team1</th>
-		  <th>Team2</th>
-		  <th>Bet</th>
-		</tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-          <td><%= @games_w1[0].team1 %></td>
-		  <td><%= @games_w1[0].team2 %></td>
-		  <td><%= f.label :tip1%><%= f.select :tip1, options_for_bet, {}, :class => "chzn-select" %></td>
-		  
-	    </tr>
-		<tr>
-          <td><%= @games_w1[1].team1 %></td>
-		  <td><%= @games_w1[1].team2 %></td>
-		  <td><%= f.label :tip2%><%= f.select :tip2, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[2].team1 %></td>
-		  <td><%= @games_w1[2].team2 %></td>
-		  <td><%= f.label :tip3%><%= f.select :tip3, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip4%><%= f.select :tip4, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip5%><%= f.select :tip5, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip6%><%= f.select :tip6, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip7%><%= f.select :tip7, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip8%><%= f.select :tip8, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip9%><%= f.select :tip9, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip10%><%= f.select :tip10, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip11%><%= f.select :tip11, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip12%><%= f.select :tip12, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip13%><%= f.select :tip13, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip14%><%= f.select :tip14, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-		<tr>
-          <td><%= @games_w1[3].team1 %></td>
-		  <td><%= @games_w1[3].team2 %></td>
-		  <td><%= f.label :tip15%><%= f.select :tip15, options_for_bet, {}, :class => "chzn-select" %></td>
-	    </tr>
-	  </tbody>
-  </table>
-
+  <div class="field">
+    <%= f.label :tip %><br>
+    <%= f.number_field :tip %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

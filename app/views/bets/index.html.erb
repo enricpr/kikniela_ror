@@ -1,26 +1,13 @@
 <h1>Listing bets</h1>
 
-<table class="table table-hover">
+<table>
   <thead>
     <tr>
       <th>User</th>
+      <th>Game</th>
       <th>Week</th>
-      <th>Hits</th>
-      <th>Tip1</th>
-      <th>Tip2</th>
-      <th>Tip3</th>
-      <th>Tip4</th>
-      <th>Tip5</th>
-      <th>Tip6</th>
-      <th>Tip7</th>
-      <th>Tip8</th>
-      <th>Tip9</th>
-      <th>Tip10</th>
-      <th>Tip11</th>
-      <th>Tip12</th>
-      <th>Tip13</th>
-      <th>Tip14</th>
-      <th>Tip15</th>
+      <th>Hit</th>
+      <th>Tip</th>
       <th></th>
       <th></th>
       <th></th>
@@ -30,24 +17,11 @@
   <tbody>
     <% @bets.each do |bet| %>
       <tr>
-        <td><%= bet.user.name %></td>
+        <td><%= bet.user %></td>
+        <td><%= bet.game %></td>
         <td><%= bet.week %></td>
-        <td><%= bet.hits %></td>
-        <td><%= bet.tip1 %></td>
-        <td><%= bet.tip2 %></td>
-        <td><%= bet.tip3 %></td>
-        <td><%= bet.tip4 %></td>
-        <td><%= bet.tip5 %></td>
-        <td><%= bet.tip6 %></td>
-        <td><%= bet.tip7 %></td>
-        <td><%= bet.tip8 %></td>
-        <td><%= bet.tip9 %></td>
-        <td><%= bet.tip10 %></td>
-        <td><%= bet.tip11 %></td>
-        <td><%= bet.tip12 %></td>
-        <td><%= bet.tip13 %></td>
-        <td><%= bet.tip14 %></td>
-        <td><%= bet.tip15 %></td>
+        <td><%= bet.hit %></td>
+        <td><%= bet.tip %></td>
         <td><%= link_to 'Show', bet %></td>
         <td><%= link_to 'Edit', edit_bet_path(bet) %></td>
         <td><%= link_to 'Destroy', bet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

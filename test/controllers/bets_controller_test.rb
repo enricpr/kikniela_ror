@@ -18,7 +18,7 @@ class BetsControllerTest < ActionController::TestCase
 
   test "should create bet" do
     assert_difference('Bet.count') do
-      post :create, bet: { hits: @bet.hits, tip10: @bet.tip10, tip11: @bet.tip11, tip12: @bet.tip12, tip13: @bet.tip13, tip14: @bet.tip14, tip15: @bet.tip15, tip1: @bet.tip1, tip2: @bet.tip2, tip3: @bet.tip3, tip4: @bet.tip4, tip5: @bet.tip5, tip6: @bet.tip6, tip7: @bet.tip7, tip8: @bet.tip8, tip9: @bet.tip9, user_id: @bet.user_id, week: @bet.week }
+      post :create, bet: { game_id: @bet.game_id, hit: @bet.hit, tip: @bet.tip, user_id: @bet.user_id, week: @bet.week }
     end
 
     assert_redirected_to bet_path(assigns(:bet))
@@ -35,7 +35,7 @@ class BetsControllerTest < ActionController::TestCase
   end
 
   test "should update bet" do
-    patch :update, id: @bet, bet: { hits: @bet.hits, tip10: @bet.tip10, tip11: @bet.tip11, tip12: @bet.tip12, tip13: @bet.tip13, tip14: @bet.tip14, tip15: @bet.tip15, tip1: @bet.tip1, tip2: @bet.tip2, tip3: @bet.tip3, tip4: @bet.tip4, tip5: @bet.tip5, tip6: @bet.tip6, tip7: @bet.tip7, tip8: @bet.tip8, tip9: @bet.tip9, user_id: @bet.user_id, week: @bet.week }
+    patch :update, id: @bet, bet: { game_id: @bet.game_id, hit: @bet.hit, tip: @bet.tip, user_id: @bet.user_id, week: @bet.week }
     assert_redirected_to bet_path(assigns(:bet))
   end
 
