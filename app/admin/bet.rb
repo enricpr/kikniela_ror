@@ -1,18 +1,46 @@
 ActiveAdmin.register Bet do
-
-
-  # See permitted parameters documentation:
-  # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #  permitted = [:permitted, :attributes]
-  #  permitted << :other if resource.something?
-  #  permitted
-  # end
-
-
+	permit_params :user_id, :game_id, :week, :hit, :tip
+		
+	index do
+		column :user, :sortable => :user
+		column :game do |bet|
+			link_to((game_teams bet.game), admin_game_path(bet.game))
+		end
+		column :week, :sortable => :week
+		column :tip
+		column :hit
+		column :created_at
+		column :updated_at
+		#Afegim accions a Veure, Editar, Borrar
+		actions
+	end
+	
+	show do
+    attributes_table do
+      row :user
+      row :game do |bet|
+				"#{bet.game.team1} - #{bet.game.team2}"
+			end
+			row :week
+			row :tip
+			row :hit
+			row :created_at
+			row :updated_at
+    end
+    active_admin_comments
+  end
+		
+	form do |f|
+		f.inputs "Bet Details" do
+			f.input :user
+			f.input :game
+			f.input :week
+			f.input :tip, :as => :select, :collection => options_for_bet
+			if !f.object.new_record?
+				f.input :hit
+			end
+		end
+		f.actions
+	end
+		
 end

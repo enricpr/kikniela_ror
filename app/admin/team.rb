@@ -1,5 +1,15 @@
 ActiveAdmin.register Team do
-
+	
+	index do
+		column :name
+		column :code
+		column :color1
+		column :color2
+		actions
+	end
+	
+	permit_params :name, :code, :color1, :color2
+	
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
