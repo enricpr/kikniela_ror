@@ -35,7 +35,7 @@ ActiveAdmin.register Bet do
 			f.input :user
 			f.input :game
 			f.input :week
-			f.input :tip, :as => :select, :collection => options_for_bet
+			f.input :tip, :as => :select, :collection => options_for_tip
 			if !f.object.new_record?
 				f.input :hit
 			end

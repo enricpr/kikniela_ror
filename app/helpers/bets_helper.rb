@@ -1,9 +1,9 @@
 module BetsHelper
-  def options_for_bet
+  def options_for_tip
   [
-    ['1', 0],
-    ['X', 1],
-    ['2', 2]
+    ['1', '1'],
+    ['X', 'X'],
+    ['2', '2']
   ]
   end	
 end

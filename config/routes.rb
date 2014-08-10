@@ -1,17 +1,27 @@
 Kikniela::Application.routes.draw do
-
-  resources :bets
+	
+	namespace :api do
+		namespace :v1 do
+			resources :games
+			resources :bets
+			resources :users
+		end
+	end
 
 	root :to => "home#index"
+	#match "/*path" => 'home#index'
 		
   devise_for :admin_users, ActiveAdmin::Devise.config
+	
   ActiveAdmin.routes(self)
 	
-	resources :users
+	#resources :bets
 
-  resources :games
+  #resources :games
 
   resources :teams
+	
+	#resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -67,4 +77,7 @@ Kikniela::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+	
+	get '*path', to: 'home#index'
+	
 end

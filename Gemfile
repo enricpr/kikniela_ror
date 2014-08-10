@@ -49,3 +49,11 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'ember-rails'
+
+gem 'ember-source'
+
+gem 'emblem-rails'
+
+gem 'bootstrap-sass', '~> 2.0.3.0'

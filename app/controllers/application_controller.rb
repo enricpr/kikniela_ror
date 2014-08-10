@@ -4,4 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   /attr_accessor :tip_index/
   attr_accessor :bet_week
+	
+	#rescue_from ActionView::MissingTemplate do |exception|
+    #render "/layouts/application"
+  #end
+	
 end

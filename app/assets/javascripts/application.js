@@ -13,5 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require ./app
+//= require_tree
 //= require bootstrap.min
+//= require bootstrap
+//= require moment.min
+
+// for more details see: http://emberjs.com/guides/application/
+App = Ember.Application.create({
+	rootElement: '#ember-app'
+});
+

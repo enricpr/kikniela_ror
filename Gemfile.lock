@@ -27,6 +27,8 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
+    active_model_serializers (0.8.1)
+      activemodel (>= 3.0)
     activemodel (4.0.2)
       activesupport (= 4.0.2)
       builder (~> 3.1.0)
@@ -45,9 +47,17 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (4.0.2)
+    barber (0.4.2)
+      ember-source
+      execjs
+      handlebars-source
+    barber-emblem (0.1.1)
+      barber (>= 0.4.1)
+      emblem-source
     bcrypt (3.1.7-x86-mingw32)
     bcrypt-ruby (3.1.5-x86-mingw32)
       bcrypt (>= 3.1.3)
+    bootstrap-sass (2.0.3.1)
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
@@ -65,10 +75,28 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    ember-data-source (1.0.0.beta.8)
+      ember-source
+    ember-rails (0.15.0)
+      active_model_serializers
+      barber (>= 0.4.1)
+      ember-data-source (>= 1.0.0.beta.5)
+      ember-source (>= 1.1.0)
+      execjs (>= 1.2)
+      handlebars-source (> 1.0.0)
+      jquery-rails (>= 1.0.17)
+      railties (>= 3.1)
+    ember-source (1.6.1)
+      handlebars-source (~> 1.0)
+    emblem-rails (0.2.1)
+      barber-emblem (~> 0.1.1)
+      ember-rails (>= 0.14.0)
+    emblem-source (0.3.16)
     erubis (2.7.0)
     execjs (2.0.2)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
+    handlebars-source (1.3.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -166,8 +194,12 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   bcrypt-ruby (~> 3.1.2)
+  bootstrap-sass (~> 2.0.3.0)
   coffee-rails (~> 4.0.0)
   devise
+  ember-rails
+  ember-source
+  emblem-rails
   formtastic
   jbuilder (~> 1.2)
   jquery-rails

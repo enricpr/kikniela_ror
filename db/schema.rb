@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140807190929) do
     t.integer  "game_id"
     t.integer  "week"
     t.integer  "hit"
-    t.integer  "tip"
+    t.string   "tip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140807190929) do
   create_table "games", force: true do |t|
     t.string   "team1"
     t.string   "team2"
-    t.integer  "result"
+    t.string   "result"
     t.integer  "week"
     t.datetime "created_at"
     t.datetime "updated_at"

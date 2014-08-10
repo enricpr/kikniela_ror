@@ -1,0 +1,24 @@
+<article id="users">
+	<h1>Usuaris</h1>
+		<table class="table table-hover">
+		<thead>
+				<tr>
+					<th>Usuari</th>
+					<th>Punts</th>
+				</tr>
+		</thead>
+		<tbody>
+			{{#each user in controller}}
+				<tr>
+					<td>{{user.name}}</td>
+					<td>
+						{{#if user.points}}
+							{{user.points}}
+						{{else}}
+							n00b
+						{{/if}}
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+</article>

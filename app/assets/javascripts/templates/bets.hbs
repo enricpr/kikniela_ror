@@ -1,0 +1,33 @@
+<article id="bets">
+	<h1>Apostes</h1>
+	<table class="table table-hover">
+		<thead>
+				<tr>
+					<th><a {{action pushSort "week"}}>Setmana</a></th>
+					<th>Partit</th>
+					<th>Pronòstic</th>
+					<th>Encert</th>
+					<th><a {{action pushSort "week"}}>Usuari</a></th>
+					<th>Actualització</th>
+				</tr>
+		</thead>
+		<tbody>
+			{{#each bet in controller}}
+				<tr>
+					<td>{{bet.week}}</td>
+					<td>{{bet.fullGame}}</td>
+					<td>{{bet.tip}}</td>
+					<td>
+						{{#if bet.hit}}
+							<span class="glyphicon glyphicon-ok"></span>
+						{{else}}
+							<span class="glyphicon glyphicon-remove"></span>
+						{{/if}}
+					</td>
+					<td>{{bet.fullName}}</td>
+					<td>{{bet.formatDate}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</article>

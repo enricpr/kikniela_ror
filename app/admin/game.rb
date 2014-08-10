@@ -18,7 +18,7 @@ ActiveAdmin.register Game do
 		f.inputs "Game Details" do
 			f.input :team1, :as => :select, :collection => Team.all.map {|f| f.name}
 			f.input :team2, :as => :select, :collection => Team.all.map {|f| f.name}
-			f.input :result, :as => :select, :collection => options_for_bet
+			f.input :result, :as => :select, :collection => options_for_result
 			f.input :week
 		end
 		f.actions
