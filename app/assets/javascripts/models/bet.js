@@ -1,6 +1,6 @@
 App.Bet = DS.Model.extend({
-  user: DS.belongsTo('user'),
-  game: DS.belongsTo('game'),
+  user_id: DS.attr('number'),
+  game_id: DS.attr('number'),
   week: DS.attr('number'),
 	tip: DS.attr('string'),
 	hit: DS.attr('boolean'),
@@ -18,18 +18,20 @@ App.Bet = DS.Model.extend({
 		return moment(this.get('updated_at')).fromNow();
 	}.property('updated_at')
 
-});
+})
+/*,
 
-/*
-serializeBelongsTo: function(record, json, relationship) {
-    var key = relationship.key,
-        belongsToRecord = Ember.get(record, key);
-     
-    if (relationship.options.embedded === 'always') {
-        json[key] = belongsToRecord.serialize();
-    }
-    else {
-        return this._super(record, json, relationship);
-    }
-}
+DS.JSONSerializer.reopen({
+	serializeBelongsTo: function(record, json, relationship) {
+			var key = relationship.key,
+					belongsToRecord = Ember.get(record, key);
+			 
+			if (relationship.options.embedded === 'always') {
+					json[key] = belongsToRecord.serialize();
+			}
+			else {
+					return this._super(record, json, relationship);
+			}
+	}
+})
 */

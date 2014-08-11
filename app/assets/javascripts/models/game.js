@@ -11,6 +11,22 @@ App.Game = DS.Model.extend({
 
 })
 
+
+DS.JSONSerializer.reopen({ // or DS.RESTSerializer
+	serializeHasMany: function(record, json, relationship) {
+		var originalKey = relationship.key;
+		var key = Ember.String.decamelize(Ember.String.singularize(originalKey));
+
+		key += "_ids";
+
+		var relationshipType = DS.RelationshipChange.determineRelationshipType(record.constructor, relationship);
+
+		if (relationshipType === 'manyToNone' || relationshipType === 'manyToMany' || relationshipType === 'manyToOne') {
+			json[key] = record.get(originalKey).mapBy('id');
+		}
+	}
+});
+
 App.ApplicationSerializer = DS.RESTSerializer.extend({
     /**
      The current ID index of generated IDs

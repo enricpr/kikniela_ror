@@ -3,9 +3,9 @@ ActiveAdmin.register Bet do
 		
 	index do
 		column :user, :sortable => :user
-		column :game do |bet|
-			link_to((game_teams bet.game), admin_game_path(bet.game))
-		end
+		column :game #do |bet|
+			#link_to((game_teams bet.game), admin_game_path(bet.game))
+		#end
 		column :week, :sortable => :week
 		column :tip
 		column :hit

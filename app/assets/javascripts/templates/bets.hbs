@@ -1,5 +1,6 @@
 <article id="bets">
 	<h1>Apostes</h1>
+	{{#link-to 'bets.new'}}Nova aposta{{/link-to}}
 	<table class="table table-hover">
 		<thead>
 				<tr>
@@ -12,10 +13,10 @@
 				</tr>
 		</thead>
 		<tbody>
-			{{#each bet in controller}}
+			{{#each bet in model}}
 				<tr>
 					<td>{{bet.week}}</td>
-					<td>{{bet.fullGame}}</td>
+					<td>{{bet.game_id}}</td>
 					<td>{{bet.tip}}</td>
 					<td>
 						{{#if bet.hit}}
@@ -24,10 +25,11 @@
 							<span class="glyphicon glyphicon-remove"></span>
 						{{/if}}
 					</td>
-					<td>{{bet.fullName}}</td>
+					<td>{{bet.user_id}}</td>
 					<td>{{bet.formatDate}}</td>
 				</tr>
 			{{/each}}
 		</tbody>
 	</table>
 </article>
+{{outlet}}

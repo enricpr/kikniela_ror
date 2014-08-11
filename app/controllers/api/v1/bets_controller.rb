@@ -28,7 +28,7 @@ class Api::V1::BetsController < ApplicationController
   end
 
   def bet_params
-    params.require(:bet).permit(:week, :tip, :hit, :game, :user, :updated_at)
+    params.require(:bet).permit(:week, :tip, :hit, :game_id, :user_id, :updated_at)
   end
 
 end

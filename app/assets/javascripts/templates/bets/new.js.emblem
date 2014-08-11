@@ -1,0 +1,23 @@
+article#bet
+  h1 Nova aposta
+
+  form
+    fieldset
+      dl
+        dt: label Aposta:
+        dd: view Ember.TextField value=fields.tip
+
+      dl
+        dt: label Setmana:
+        dd: view Ember.TextField value=fields.week
+      
+      dl
+        dt: label Partit:
+        dd: view Ember.TextField value=fields.game_id
+
+      dl
+        dt: label Usuari:
+        dd: view Ember.TextField value=fields.user_id
+
+    fieldset.actions
+      input type='submit' value='Guarda' click="createBet"

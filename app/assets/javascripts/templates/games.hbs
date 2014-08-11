@@ -6,18 +6,30 @@
 					<th><a {{action pushSort "week"}}>Setmana</a></th>
 					<th>Partit</th>
 					<th>Resultat</th>
+					<th></th>
 				</tr>
 		</thead>
 		<tbody>
-			{{#each game in controller}}
+			{{#each game in model}}
 				<tr>
 					<td>{{game.week}}</td>
 					<td>{{game.fullGame}}</td>
 					<td>
 						{{#if game.result}}
 							{{game.result}}
+					</td>
 						{{else}}
 							No Finalitzat
+						{{/if}}
+					</td>
+					<td>
+						{{#if game.result}}
+							<span class="glyphicon glyphicon-ban-circle"></span>
+						{{else}}
+							{{input type="hidden" id="week" value=game.week}}
+							{{input type="hidden" id="game" value=game.id}}
+							{{input type="text" class="new-bet" placeholder="1-X-2" value=newBet}}
+							<button {{action "createBetFromGame" this}} class="btn btn-primary btn-sm new-bet-button">Guardar</button>
 						{{/if}}
 					</td>
 				</tr>
