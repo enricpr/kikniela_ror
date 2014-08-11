@@ -2,7 +2,7 @@ Kikniela::Application.routes.draw do
 	
 	namespace :api do
 		namespace :v1 do
-			resources :games
+			#resources :games
 			resources :bets
 			resources :users
 		end
@@ -17,7 +17,7 @@ Kikniela::Application.routes.draw do
 	
 	#resources :bets
 
-  #resources :games
+  resources :games
 
   resources :teams
 	

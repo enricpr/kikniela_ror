@@ -4,5 +4,9 @@ class User < ActiveRecord::Base
   has_secure_password
 	
 	scope :topUsers, where(:points => !nil)
-	#scope :topUsers, ->(num) { order('points DESC').limit(num) }
+	
+	# Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, 
+         :recoverable, :rememberable, :trackable, :validatable
 end

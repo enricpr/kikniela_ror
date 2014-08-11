@@ -7,7 +7,7 @@ App.GamesRoute = Ember.Route.extend({
 				alert('broken!');
     });
 
-	},
+	}/*,
 	actions: {
 		createBetFromGame: function(){		
 			var tip = this.get("controller.newBet");
@@ -23,5 +23,5 @@ App.GamesRoute = Ember.Route.extend({
 		},
 
 	}
-
+*/
 })

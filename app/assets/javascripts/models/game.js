@@ -2,7 +2,7 @@ App.Game = DS.Model.extend({
   team1: DS.attr('string'),
   team2: DS.attr('string'),
   result: DS.attr('string'),
-  week: DS.attr('number'),
+  week: DS.attr('string'),
 	bets: DS.hasMany('bet', {embedded: 'always'}),
 	
 	fullGame: function() {
