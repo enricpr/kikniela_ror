@@ -12,8 +12,8 @@
 
 <div id="ember-app"></div>
 
-<% if user_signed_in? %>
-  <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<%- if user_signed_in? %>
+  <meta name="current-user" content="<%= UserSerializer.new(current_user).to_json(root: false) %>" />
 <% end %>
 
 <p class="notice"><%= notice %></p>

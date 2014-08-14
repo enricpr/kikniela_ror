@@ -1,4 +1,5 @@
 class Api::V1::BetsController < ApplicationController
+	before_filter :authenticate_user!
 	respond_to :json
 
   def index

@@ -5,6 +5,7 @@ App.Router.map(function() {
   this.route('sign_out');
 	this.route('sign_in');
 	this.route('users');
+	//this.route('registration');
 	
 	/*
 	this.resource('users', function() {

@@ -26,7 +26,8 @@ App.GamesController = Ember.ArrayController.extend({
 			var tip = this.get("newBet");
 			var week = game.get("week");
 			var game = game.id;
-			var user = 1;
+			var user = this.get('currentUser.id');
+			console.log(user);
 			var bet = this.store.createRecord('bet', {tip: tip, week: week, game_id: game, user_id: user});
 			bet.save();
 			this.set("newBet", "");

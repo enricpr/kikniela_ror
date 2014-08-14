@@ -17,7 +17,6 @@ App.Game = DS.Model.extend({
 
 })
 
-
 DS.JSONSerializer.reopen({ // or DS.RESTSerializer
 	serializeHasMany: function(record, json, relationship) {
 		var originalKey = relationship.key;

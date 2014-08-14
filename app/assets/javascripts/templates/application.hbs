@@ -6,6 +6,7 @@
 			<li>{{#link-to 'bets' }}Apostes{{/link-to}}</li>
 			{{#if signedIn}}
 				<li>{{#link-to 'sign_out'}}Sign Out{{/link-to}}</li>
+				<li>Hola {{currentUser.id}}</li>
 			{{else}}
 				<li>{{#link-to 'sign_in'}}Sign In{{/link-to}}</li>
 			{{/if}}

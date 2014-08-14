@@ -3,6 +3,7 @@ DS.RESTAdapter.reopen({
 })
 
 App.Store = DS.Store.extend({
+
 });
 
 // Override the default adapter with the `DS.ActiveModelAdapter` which
