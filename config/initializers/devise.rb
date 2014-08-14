@@ -4,8 +4,13 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '25d58feba0a076a38ec942ba5bef21531f65c45bbcc33c236979b6c0b4a4b3ce0364105308a033666f34f92fccbfd9f03d66e5ee4bb164611fe4b3edcb90e322'
-
+  config.secret_key = '0276c0ffe4d6cbb09b543b8042eb795b798f925abecd3b847746b180ddc6883d677f82ff79a45ddef2c5196adbfa210ca98fdd7a3a3685d6c0bb2d07082d5afd'
+	
+	#conflicte ActiveAdmin-Devise User
+	#config.scoped_views = true	
+	#config.default_scope = :users
+	#config.add_mapping :users, {}
+	
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -29,7 +34,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [ :email ]
+  #config.authentication_keys = [ :email ]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -97,7 +102,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '37d5e0ddd12e79ada9c3f6f9d0400684540fe80806853dfcacff87da46525a61fe120fe34cfbc6355637f6f1f55bf90d5f92590af91a0750037681133839152e'
+  # config.pepper = 'a67f0d478f39730a0f2ebec92af6ec43047fe3fdf606d472405cc6ea10158718d3a5b5d80b1727dab5fb3e0cca0dad15f9acc4679c1fb33638111e30f514d609'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -221,7 +226,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+  #config.navigational_formats = ['*/*', :html, :json]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete

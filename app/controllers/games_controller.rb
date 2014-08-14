@@ -1,11 +1,16 @@
 class GamesController < ApplicationController
 	before_filter :authenticate_user!
 	before_action :set_game, only: [:show, :edit, :update, :destroy]
-
   # GET /games
   # GET /games.json
   def index
+		respond_to :json
     @games = Game.all
+		
+		#respond_to do |format|
+			#format.html { render html: @games }
+			#format.json { render json: @games }
+		#end
   end
 
   # GET /games/1

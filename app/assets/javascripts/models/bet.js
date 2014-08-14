@@ -5,7 +5,8 @@ App.Bet = DS.Model.extend({
 	tip: DS.attr('string'),
 	hit: DS.attr('boolean'),
 	updated_at: DS.attr('date'),
-
+	
+	/*
 	fullGame: function() {
 		return this.get('game.team1') + ' - ' + this.get('game.team2')
 	}.property('team1', 'team2'),
@@ -13,7 +14,7 @@ App.Bet = DS.Model.extend({
 	fullName: function() {
 		return this.get('user.name')
 	}.property('name'),
-	
+	*/
 	formatDate: function() {
 		return moment(this.get('updated_at')).fromNow();
 	}.property('updated_at')

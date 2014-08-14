@@ -1,7 +1,10 @@
 App.User = DS.Model.extend({
   name: DS.attr('string'),
   points: DS.attr('number'),
-	bets: DS.hasMany('bet', {embedded: 'always'}),
+	email: DS.attr('string'),
+  password: DS.attr('string'),
+  passwordConfirmation: DS.attr('string')
+	/*bets: DS.hasMany('bet', {embedded: 'always'})*/
 })
 
 App.ApplicationSerializer = DS.RESTSerializer.extend({

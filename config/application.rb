@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'devise'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
@@ -19,6 +21,10 @@ module Kikniela
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-		I18n.config.enforce_available_locales = true
+		#I18n.config.enforce_available_locales = true
+		#config.assets.initialize_on_precompile = false
+		
+		config.api_only = false
+		
   end
 end

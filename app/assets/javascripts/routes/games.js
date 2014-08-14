@@ -1,13 +1,9 @@
 App.GamesRoute = Ember.Route.extend({
-
-	model: function(controller) {
-		return this.store.find('game').then(function(games) {
-			return games;
-    }, function() {
-				alert('broken!');
-    });
-
-	}/*,
+	model: function(params) {
+		return this.store.find('game')
+	}
+	
+	/*,
 	actions: {
 		createBetFromGame: function(){		
 			var tip = this.get("controller.newBet");

@@ -90,8 +90,8 @@ a.delete {
 }
 
 header {
-  background: #f57011;
-  height: 47px;
+  background: #ddd;
+  height: 50px;
 }
 
 header article {
@@ -104,9 +104,6 @@ header article .logo {
 }
 
 header article .logo a {
-  font-size: 28px;
-  font-family: "Maven Pro";
-  font-weight: 500;
   color: white;
 }
 
@@ -151,7 +148,7 @@ form fieldset.actions .cancel {
 
 article#bets {
   margin: 30px 35px 0 0;
-  width: 45%;
+  width: 95%;
   background: #FFF;
   float: left;
   padding: 15px 20px 20px;
@@ -190,7 +187,7 @@ article#bets ul li:hover, article#leads ul li.active {
 
 article#games {
   margin: 30px 35px 0 0;
-  width: 45%;
+  width: 95%;
   background: #FFF;
   float: left;
   padding: 15px 20px 20px;
@@ -206,7 +203,7 @@ article#games h1 {
 
 article#users {
   margin: 30px 35px 0 0;
-  width: 45%;
+  width: 95%;
   background: #FFF;
   float: left;
   padding: 15px 20px 20px;

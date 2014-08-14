@@ -1,5 +1,6 @@
 App.UsersController = Ember.ArrayController.extend({
-  sortDescending: ['points'],
+  /*
+	sortDescending: ['points'],
 	
 	actions: {
 		pushSort: function(attribute) {
@@ -11,4 +12,5 @@ App.UsersController = Ember.ArrayController.extend({
 			}
 		}
 	}
+	*/
 })

@@ -1,7 +1,6 @@
 App.GamesController = Ember.ArrayController.extend({
   sortProperties: ['week'],
 	betChoices: ["", "1", "X", "2"],
-	weekChoices: ["1", "2", "3"],
 
 	games: function() {
 		return this.get('searchWeek') ? this.get('searchedWeeks') : this
@@ -23,15 +22,14 @@ App.GamesController = Ember.ArrayController.extend({
 					this.set("sortAscending", true);
 			}
 		},
-		createBetFromGame: function(){		
+		createBetFromGame: function(game){
 			var tip = this.get("newBet");
-			var week = $('#week').val();
-			var game = $('#game').val();
+			var week = game.get("week");
+			var game = game.id;
 			var user = 1;
-			
 			var bet = this.store.createRecord('bet', {tip: tip, week: week, game_id: game, user_id: user});
 			bet.save();
-			//this.get("controller").set("newBet", "");
+			this.set("newBet", "");
 			this.transitionToRoute("bets");
 		}
 	}

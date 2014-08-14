@@ -110,7 +110,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  #config.root_to = 'dashboard#index'
 
 
   # == Admin Comments
@@ -139,7 +139,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  # config.before_filter :do_something_awesome
+  #config.before_filter :do_something_awesome
 
 
   # == Setting a Favicon

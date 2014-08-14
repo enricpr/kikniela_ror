@@ -3,11 +3,17 @@ App.Game = DS.Model.extend({
   team2: DS.attr('string'),
   result: DS.attr('string'),
   week: DS.attr('string'),
-	bets: DS.hasMany('bet', {embedded: 'always'}),
+	/*bets: DS.hasMany('bet', {embedded: 'always'}),*/
 	
 	fullGame: function() {
 		return this.get('team1') + ' - ' + this.get('team2')
-	}.property('team1', 'team2')
+	}.property('team1', 'team2'),
+	
+	
+	weekId: function() {
+		return 'w' + this.get('id')
+	}.property('id')
+	
 
 })
 

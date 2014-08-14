@@ -1,11 +1,20 @@
 <h1>Listing users</h1>
 
-<table class="table table-hover">
+<table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Points</th>
       <th>Email</th>
+      <th>Encrypted password</th>
+      <th>Reset password token</th>
+      <th>Reset password sent at</th>
+      <th>Remember created at</th>
+      <th>Sign in count</th>
+      <th>Current sign in at</th>
+      <th>Last sign in at</th>
+      <th>Current sign in ip</th>
+      <th>Last sign in ip</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +27,15 @@
         <td><%= user.name %></td>
         <td><%= user.points %></td>
         <td><%= user.email %></td>
+        <td><%= user.encrypted_password %></td>
+        <td><%= user.reset_password_token %></td>
+        <td><%= user.reset_password_sent_at %></td>
+        <td><%= user.remember_created_at %></td>
+        <td><%= user.sign_in_count %></td>
+        <td><%= user.current_sign_in_at %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td><%= user.current_sign_in_ip %></td>
+        <td><%= user.last_sign_in_ip %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

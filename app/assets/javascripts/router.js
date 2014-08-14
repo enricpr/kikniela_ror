@@ -1,9 +1,20 @@
 App.Router.map(function() {
-  this.resource('games', {path:'/games'});
-	this.resource('bets', {path: '/bets'}, function() {
-			this.route('new');
+  this.route('home');
+	this.route('games');
+	this.resource('bets');
+  this.route('sign_out');
+	this.route('sign_in');
+	this.route('users');
+	
+	/*
+	this.resource('users', function() {
+    this.route('sign_in');
+  });
+	this.resource('sessions', function() {
+		this.route('new');
+		this.route('destroy');
 	});
-	this.resource('users', {path: '/users'});
+	*/
 });
 
 App.Router.reopen({

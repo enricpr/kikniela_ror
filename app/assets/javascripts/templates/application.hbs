@@ -1,9 +1,17 @@
 <header>
 	<article>
-		<div class="logo"><h1><a href="#">Kikniela</a></h1></div>
+		<ul class="nav navbar-nav">
+			<li>{{#link-to 'index' }}kikniela{{/link-to}}</li>
+			<li>{{#link-to 'games' }}Partits{{/link-to}}</li>
+			<li>{{#link-to 'bets' }}Apostes{{/link-to}}</li>
+			{{#if signedIn}}
+				<li>{{#link-to 'sign_out'}}Sign Out{{/link-to}}</li>
+			{{else}}
+				<li>{{#link-to 'sign_in'}}Sign In{{/link-to}}</li>
+			{{/if}}
+		</ul>
 	</article>
 </header>
 <section id="main">
 	{{outlet}}
 </section>
-<footer></footer>

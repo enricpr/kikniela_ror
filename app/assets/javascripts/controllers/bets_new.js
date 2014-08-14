@@ -6,7 +6,7 @@ App.BetsNewController = Ember.Controller.extend({
       var self = this;
       var bet = this.store.createRecord('bet', this.get('fields'));
       bet.save().then(function() {
-        //self.transitionToRoute('games');
+        self.transitionToRoute('games');
       });
     }
   }

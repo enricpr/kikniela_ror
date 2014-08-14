@@ -1,25 +1,41 @@
 Kikniela::Application.routes.draw do
 	
+	devise_for :users, :controllers => { :sessions => "json_sessions" }
+
+	devise_for :admin_users, ActiveAdmin::Devise.config
+	
+	#devise_for :users, skip: [:sessions, :passwords, :registrations]
+	
+	ActiveAdmin.routes(self)
+
 	namespace :api do
 		namespace :v1 do
-			#resources :games
+			#devise_for :users, :controllers => { :sessions => "json_sessions", registrations: 'registrations' }
+			resources :games
 			resources :bets
 			resources :users
+			#devise_scope :user do
+			#	resources :sessions
+      #  post 'sessions' => 'sessions#create', :as => 'login'
+      #end
 		end
 	end
 
-	root :to => "home#index"
-	#match "/*path" => 'home#index'
-		
-  devise_for :admin_users, ActiveAdmin::Devise.config
-	
-  ActiveAdmin.routes(self)
-	
 	#resources :bets
+	
+	#resources :games
+	
+	#resources :users
+	
+	root :to => "home#index"
+	
+	get '*path', to: 'home#index'
+	
+	#match "/*path" => 'home#index'
+	
+	#resources :admin_users
 
-  resources :games
-
-  resources :teams
+  #resources :teams
 	
 	#resources :users
 
@@ -77,7 +93,5 @@ Kikniela::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-	
-	get '*path', to: 'home#index'
 	
 end

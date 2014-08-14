@@ -10,43 +10,42 @@
 		</table>
 		</table>
 		<table class="table table-hover">
-		<thead>
-				<tr>
-					<th><a {{action pushSort "week"}}>Setmana</a></th>
-					<th>Partit</th>
-					<th>Resultat</th>
-					<th></th>
-					<th></th>
-				</tr>
-		</thead>
-		<tbody>
-			{{#each game in games}}
-				<tr>
-					<td>{{game.week}}</td>
-					<td>{{game.fullGame}}</td>
-					<td>
-						{{#if game.result}}
-							{{game.result}}
-					</td>
-						{{else}}
-							No Finalitzat
-						{{/if}}
-					</td>
-					<td>
-						{{#if game.result}}
-							<span class="glyphicon glyphicon-ban-circle"></span>
-						{{else}}
-							{{input type="hidden" id="week" value=game.week}}
-							{{input type="hidden" id="game" value=game.id}}
-							{{view Ember.Select content=betChoices value=newBet class="form-control"}}
-						{{/if}}
-					</td>
-					<td>
-						{{#unless game.result}}
-							<button {{action "createBetFromGame" this}} class="btn btn-primary btn-sm new-bet-button">Guardar</button>
-						{{/unless}}
-					</td>
-				</tr>
-			{{/each}}
-		</tbody>
+			<thead>
+					<tr>
+						<th><a {{action pushSort "week"}}>Setmana</a></th>
+						<th>Partit</th>
+						<th>Resultat</th>
+						<th></th>
+						<th></th>
+					</tr>
+			</thead>
+			<tbody>
+				{{#each game in games}}
+					<tr>
+						<td>{{game.week}}</td>
+						<td>{{game.fullGame}}</td>
+						<td>
+							{{#if game.result}}
+								{{game.result}}
+						</td>
+							{{else}}
+								No Finalitzat
+							{{/if}}
+						</td>
+						<td>
+							{{#if game.result}}
+								<span class="glyphicon glyphicon-ban-circle"></span>
+							{{else}}
+								{{view Ember.Select content=betChoices value=newBet class="form-control"}}
+							{{/if}}
+						</td>
+						<td>
+							{{#unless game.result}}
+								<button {{action "createBetFromGame" game}} class="btn btn-primary btn-sm new-bet-button">Guardar</button>
+							{{/unless}}
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
 </article>
