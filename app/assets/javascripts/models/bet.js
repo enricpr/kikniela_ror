@@ -1,20 +1,19 @@
 App.Bet = DS.Model.extend({
-  user_id: DS.attr('number'),
-  game_id: DS.attr('number'),
-  week: DS.attr('number'),
+  user: DS.belongsTo('user'),
+  game: DS.belongsTo('game'),
+  week: DS.attr('string'),
 	tip: DS.attr('string'),
 	hit: DS.attr('boolean'),
 	updated_at: DS.attr('date'),
 	
-	/*
-	fullGame: function() {
+	fullGameBet: function() {
 		return this.get('game.team1') + ' - ' + this.get('game.team2')
-	}.property('team1', 'team2'),
+	}.property('game.team1', 'game.team2'),
 	
-	fullName: function() {
+	fullNameBet: function() {
 		return this.get('user.name')
 	}.property('name'),
-	*/
+	
 	formatDate: function() {
 		return moment(this.get('updated_at')).fromNow();
 	}.property('updated_at')

@@ -1,7 +1,7 @@
 App.GamesController = Ember.ArrayController.extend({
   sortProperties: ['week'],
 	betChoices: ["", "1", "X", "2"],
-
+	
 	games: function() {
 		return this.get('searchWeek') ? this.get('searchedWeeks') : this
 	}.property('searchWeek', 'searchedWeeks'),

@@ -1,7 +1,8 @@
 ActiveAdmin.register Bet do
 	permit_params :user_id, :game_id, :week, :hit, :tip
-		
+
 	index do
+		selectable_column
 		column :user, :sortable => :user
 		column :game #do |bet|
 			#link_to((game_teams bet.game), admin_game_path(bet.game))
