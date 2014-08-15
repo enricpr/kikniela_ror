@@ -7,7 +7,7 @@
 					<th>Partit</th>
 					<th>Pronòstic</th>
 					<th>Encert</th>
-					<th><a {{action pushSort "user"}}>Usuari</a></th>
+					<th><a {{action pushSort "user_id"}}>Usuari</a></th>
 					<th>Actualització</th>
 				</tr>
 		</thead>
@@ -15,7 +15,7 @@
 			{{#each bet in bets}}
 				<tr>
 					<td>{{bet.week}}</td>
-					<td>{{bet.fullGameBet}}</td>
+					<td>{{bet.game_id}}</td>
 					<td>{{bet.tip}}</td>
 					<td>
 						{{#if bet.hit}}
@@ -24,7 +24,7 @@
 							<span class="glyphicon glyphicon-remove"></span>
 						{{/if}}
 					</td>
-					<td>{{bet.fullNameBet}}</td>
+					<td>{{bet.user_id}}</td>
 					<td>{{bet.formatDate}}</td>
 				</tr>
 			{{/each}}

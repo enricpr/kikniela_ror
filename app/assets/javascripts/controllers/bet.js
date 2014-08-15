@@ -4,7 +4,7 @@ App.BetsController = Ember.ArrayController.extend({
 	bets: function() {
 		var userId = this.get('currentUser.id');
 		return this.filter(function(bet) {
-			return bet.get('user.id') == userId;
+			return bet.get('user_id') == userId;
 		})
 	}.property('bet'),
 
