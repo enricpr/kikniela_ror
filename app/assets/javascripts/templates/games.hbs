@@ -16,6 +16,7 @@
 						<th>Resultat</th>
 						<th></th>
 						<th></th>
+						<th>Límit</th>
 					</tr>
 			</thead>
 			<tbody>
@@ -42,6 +43,9 @@
 							{{#unless game.result}}
 								<button {{action "createBetFromGame" game}} class="btn btn-primary btn-sm new-bet-button">Guardar</button>
 							{{/unless}}
+						</td>
+						<td>
+							<span {{bind-attr style="game.fillStyle"}}>{{game.toDeadline}}</span>
 						</td>
 					</tr>
 				{{/each}}

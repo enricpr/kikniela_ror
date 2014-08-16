@@ -3,16 +3,36 @@ App.Game = DS.Model.extend({
   team2: DS.attr('string'),
   result: DS.attr('string'),
   week: DS.attr('string'),
+	deadline: DS.attr('date'),
 	bets: DS.hasMany('bet', {embedded: 'always'}),
 	
 	fullGame: function() {
 		return this.get('team1') + ' - ' + this.get('team2')
 	}.property('team1', 'team2'),
 	
-	
 	weekId: function() {
 		return 'w' + this.get('id')
-	}.property('id')
+	}.property('id'),
+	
+	fillStyle: function() {
+		if (Date.now() < this.get('deadline')) {
+			if ((this.get('deadline') - Date.now()) < 18000000) {
+				return 'color: orange';
+			} else {
+				return 'color: limegreen';
+			}
+		} else {
+			return 'color: darkred';
+		}
+	}.property('deadline'),
+
+	toDeadline: function() {
+		if (Date.now() < this.get('deadline')) {
+			return moment(this.get('deadline')).fromNow();
+		} else {
+			return "Finalitzat";
+		}
+	}.property('deadline')
 	
 
 })

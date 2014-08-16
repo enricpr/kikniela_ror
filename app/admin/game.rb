@@ -1,6 +1,6 @@
 ActiveAdmin.register Game do
 	scope :notEnded
-	permit_params :team1, :team2, :result, :week
+	permit_params :team1, :team2, :result, :week, :deadline
 	
 	show do
     attributes_table do
@@ -8,6 +8,7 @@ ActiveAdmin.register Game do
 			row :team2
 			row :result
 			row :week
+			row :deadline
 			row :created_at
 			row :updated_at
     end
@@ -19,6 +20,7 @@ ActiveAdmin.register Game do
 			f.input :team1, :as => :select, :collection => Team.all.map {|f| f.name}
 			f.input :team2, :as => :select, :collection => Team.all.map {|f| f.name}
 			f.input :result, :as => :select, :collection => options_for_result
+			f.input :deadline, :as => :datetime, :order => [:day, :month, :year]
 			f.input :week
 		end
 		f.actions

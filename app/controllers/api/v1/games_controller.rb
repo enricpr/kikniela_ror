@@ -45,7 +45,7 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:team1, :team2, :result, :week)
+    params.require(:game).permit(:team1, :team2, :result, :week, :deadline)
   end
 
 end
